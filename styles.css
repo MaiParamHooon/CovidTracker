@@ -1,0 +1,580 @@
+* {
+	font-family: "Roboto", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	transition: all 0.3s cubic-bezier(0.16, 0.8, 0.62, 1.52);
+	text-transform: capitalize;
+}
+
+*::selection {
+	background-color: #ff4f5b;
+	color: white;
+}
+
+html {
+	font-size: 62.5%;
+	/* anything overflow gets hided */
+	overflow-x: hidden;
+}
+
+body {
+	background: #f9f9f9;
+}
+
+section {
+	min-height: 100vh;
+	padding: 0 7%;
+	padding-top: 7rem;
+}
+
+.btn {
+	display: inline-block;
+	margin-top: 1rem;
+	padding: 1rem 4rem;
+	border-radius: 5rem;
+	background: #ff4f5b;
+	color: #fff;
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+	font-size: 1.7rem;
+}
+
+.btn::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	background: #444;
+	clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+	transition: 10sec linear;
+}
+
+.btn:hover::before {
+	clip-path: polygon(0 0, 100% 0, 100% 0%, 0 100%);
+}
+
+.heading {
+	font-size: 3rem;
+	color: #666;
+}
+
+.heading span {
+	color: #ff4f5b;
+}
+
+header {
+	width: 100%;
+	background: rgb(255, 255, 255);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	padding: 2.5rem 7%;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+	font-size: 2.5rem;
+	color: #666;
+}
+
+header .logo span {
+	color: #ff4f5b;
+}
+
+header .navbar ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	list-style: none;
+}
+
+header .navbar ul li {
+	margin-left: 2.5rem;
+}
+
+header .navbar ul li a {
+	color: #999;
+	font-size: 2rem;
+	text-decoration: none;
+}
+
+header .navbar ul li a:hover {
+	color: #ff4f5b;
+	border-bottom: 0.2rem solid #ff4f5b;
+	padding: 0.5rem 0;
+}
+
+header.scrolled {
+	background-color: pink !important;
+	transition: background-color 200ms linear;
+}
+
+#menu {
+	font-size: 3rem;
+	color: #999;
+	cursor: pointer;
+	display: none;
+}
+
+.home {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.home .image {
+	flex: 1 1 40rem;
+}
+
+.home .image img {
+	width: 100%;
+}
+
+.home .content {
+	flex: 1 1 40rem;
+}
+
+.home .content span {
+	color: #ff4f5b;
+	font-size: 2.5rem;
+}
+
+.home .content h3 {
+	color: #666;
+	font-size: 5rem;
+}
+
+.home .content p {
+	color: #999;
+	font-size: 2rem;
+	padding: 1rem 0;
+}
+
+.protect {
+	background-color: #222;
+}
+
+.protect .heading {
+	text-align: center;
+	padding: 1rem;
+	background: #fff;
+}
+
+.protect .box-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.protect .box-container .box {
+	background: #fff;
+	border: 0.1rem solid rgba(0, 0, 0, 0.1);
+	padding: 2rem;
+	margin: 10rem 2rem;
+	width: 34rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+.protect .box-container .box img {
+	height: 17rem;
+	width: 17rem;
+}
+
+.protect .box-container .box h3 {
+	font-size: 2.5rem;
+	color: #666;
+	padding: 1rem 0;
+}
+
+.protect .box-container .box:hover {
+	transform: translateY(-1rem);
+}
+
+.symtoms {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.symtoms .content {
+	flex: 1 1 40rem;
+}
+
+.symtoms .image {
+	flex: 1 1 40rem;
+}
+
+.symtoms .image img {
+	width: 100%;
+}
+
+.symtoms .content ul {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1rem 0;
+}
+
+.symtoms .content ul .two {
+	padding-left: 4.5rem;
+}
+
+.symtoms .content ul li {
+	margin-left: 2rem;
+	font-size: 1.5rem;
+	color: #666;
+	padding: 0.5rem 0;
+}
+
+.prevent {
+	background-color: #222;
+}
+
+.prevent .row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 2rem 0;
+}
+
+.prevent .row .image {
+	flex: 1 1 37rem;
+	height: 35rem;
+	text-align: center;
+}
+
+.prevent .row .image img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.prevent .row .content {
+	padding: 2rem 0;
+	flex: 1 1 37rem;
+}
+
+.prevent .row .content .heading {
+	color: #fff;
+}
+
+.prevent .row .content ul li {
+	margin-left: 2rem;
+	font-size: 1.5rem;
+	color: #aaa;
+	padding: 0.5rem 0;
+}
+
+.tracker {
+	height: 600px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.stats {
+	width: 100%;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+		url("img/bg1.jpeg");
+	background-size: cover;
+}
+
+.latest-report {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 50px;
+	color: #fff;
+	font-size: 1.75rem;
+}
+
+.country,
+.total-cases,
+.recovered,
+.deaths {
+	height: 100px;
+}
+
+.name {
+	font-size: 2.2em;
+	color: #be64f1;
+	font-weight: bold;
+}
+
+.change-country {
+	cursor: pointer;
+}
+
+.dis {
+	display: none;
+}
+
+.titile {
+	font-size: 1.3em;
+}
+
+.total-cases .value {
+	font-size: 2em;
+	font-weight: bold;
+}
+.recovered .value {
+	font-size: 2em;
+	font-weight: bold;
+	color: #009688;
+}
+.deaths .value {
+	font-size: 2em;
+	font-weight: bold;
+	color: #f44336;
+}
+
+.new-value {
+	font-size: 1.3em;
+}
+
+.chart {
+	width: 80%;
+	height: 70vh;
+	min-height: 500px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+.search-country {
+	position: relative;
+	top: 10px;
+}
+
+.search-box {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 400px;
+	height: 30px;
+	background: #111;
+	z-index: 1;
+}
+
+.search-box input {
+	width: 360px;
+	height: 25px;
+	border: none;
+	background-color: transparent;
+	color: #fff;
+	padding-left: 15px;
+	font-size: 1.1em;
+}
+
+.search-box img {
+	width: 20px;
+	padding-right: 5px;
+	cursor: pointer;
+}
+
+.country-list {
+	display: flex;
+	position: absolute;
+	top: 30px;
+	width: 400px;
+	height: 300px;
+	background-color: #111;
+	opacity: 0.9;
+	overflow-y: scroll;
+}
+
+.country-list ul {
+	width: 100%;
+}
+
+.country-list ul li {
+	list-style: none;
+	cursor: pointer;
+	padding: 10px;
+	color: #fff;
+}
+
+.country-list ul li:hover {
+	border-left: 1px solid #fff;
+}
+
+h1 {
+	padding: 3rem;
+	padding-top: 10rem;
+	text-align: center;
+	color: rgba(0, 0, 0, 1);
+	font-weight: bold;
+	font-size: 5rem;
+}
+
+footer {
+	width: 100%;
+	background: #be64f1;
+	display: block;
+	font-size: 1.3rem;
+	text-align: center;
+	padding: 2.5rem 7%;
+}
+
+.footer-container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.copyright {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.loader {
+	position: fixed;
+	z-index: 99999;
+	background: #111;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loader div {
+	background: #fff;
+	width: 16px;
+	height: 32px;
+	margin-left: 10px;
+	animation: loader 1.2s infinite;
+}
+
+/* The @keyframes rule specifies the animation code. */
+/* The animation is created by gradually changing from one set of CSS styles to another. */
+@keyframes loader {
+	50% {
+		height: 64px;
+	}
+}
+
+.loader div:nth-child(1) {
+	background: blue;
+	animation-delay: -0.4s;
+}
+
+.loader div:nth-child(2) {
+	background: rgb(187, 14, 57);
+	animation-delay: -0.2s;
+}
+
+.loader div:nth-child(3) {
+	background: rgb(37, 212, 14);
+	animation-delay: 0s;
+}
+
+@media (max-width: 768px) {
+	#menu {
+		display: block;
+	}
+
+	.navbar {
+		display: block;
+	}
+
+	header .navbar {
+		position: fixed;
+		top: 8rem;
+		left: -120%;
+		height: 100%;
+		width: 100%;
+		background: #eee;
+		border-top: 0.2rem solid rgba(0, 0, 0, 0.1);
+	}
+
+	header .navbar ul {
+		flex-flow: column;
+		padding: 2rem;
+	}
+
+	header .navbar ul li {
+		text-align: center;
+		width: 100%;
+		margin: 1rem 0;
+	}
+
+	header .navbar ul li a {
+		display: block;
+		padding: 1rem;
+	}
+
+	header .navbar ul li a.active,
+	header .navbar ul li a:hover {
+		padding: 1rem;
+		background: #ff4f5b;
+		color: #fff;
+		border: none;
+		border-radius: 5rem;
+	}
+
+	.fa-times {
+		transition: rotate(180);
+	}
+
+	header .navbar.nav-toggle {
+		left: 0;
+	}
+
+	.home .content {
+		text-align: center;
+		margin-top: 5rem;
+	}
+
+	.protect .box-container .box {
+		margin: 5rem;
+	}
+
+	.prevent .row:last-child {
+		flex-flow: column-reverse;
+	}
+
+	.prevent .row {
+		align-items: flex-start;
+	}
+
+	.latest-report {
+		font-size: 1.2rem;
+	}
+}
+
+@media (max-width: 500px) {
+	html {
+		font-size: 50%;
+	}
+
+	section {
+		padding: 0 3%;
+		padding-top: 9rem;
+	}
+	.latest-report {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}

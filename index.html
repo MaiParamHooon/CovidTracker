@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- HTML requirement -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Title -->
+		<title>Covid-19</title>
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Favicon -->
+		<link rel="icon" href="img/download.png" />
+
+		<!-- Font awesom -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="loader">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+		<header>
+			<a href="#" class="logo">c <span class="fas fa-virus"></span>vid</a>
+
+			<div id="menu" class="fas fa-bars"></div>
+
+			<nav class="navbar" styles="text-align: center">
+				<ul>
+					<li><a class="active" href="#home" id="h">home</a></li>
+					<li><a href="#protect" id="p">protect</a></li>
+					<li><a href="#symtoms" id="s">symtoms</a></li>
+					<li><a href="#prevent" id="pr">prevent</a></li>
+					<li><a href="#tracker" id="t">Tracker</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="home" id="home">
+			<div class="content">
+				<span>Covid-19</span>
+				<h3>Stay Safe, Stay Home</h3>
+				<p>
+					Coronavirus disease (COVID-19) is an infectious disease caused by a
+					newly discovered coronavirus. Most people infected with the COVID-19
+					virus will experience mild to moderate respiratory illness and recover
+					without requiring special treatment.
+				</p>
+				<a href="#protect" class="btn">protect now</a>
+			</div>
+
+			<div class="image">
+				<img src="img/home-img.png" alt="" />
+			</div>
+		</section>
+
+		<section class="protect" id="protect">
+			<h1 class="heading">Take steps to <span>protect</span> yourself</h1>
+
+			<div class="box-container">
+				<div class="box">
+					<img src="img/protect-1.png" alt="" />
+					<h3>Wear A Face Mask</h3>
+				</div>
+				<div class="box">
+					<img src="img/protect-2.png" alt="" />
+					<h3>Clean your hands</h3>
+				</div>
+				<div class="box">
+					<img src="img/protect-3.png" alt="" />
+					<h3>Avoid crowded places</h3>
+				</div>
+			</div>
+		</section>
+
+		<section class="symtoms" id="symtoms">
+			<div class="content">
+				<h1 class="heading">What are the main <span>Symptoms?</span></h1>
+				<ul>
+					<div class="one">
+						<li>Fever</li>
+						<li>Tiredness</li>
+						<li>Dry Cough</li>
+					</div>
+					<div class="two">
+						<li>Sore Throat</li>
+						<li>Aches and Pain</li>
+						<li>Shortness of Breath</li>
+					</div>
+				</ul>
+			</div>
+
+			<div class="image">
+				<img src="img/symptoms-img.png" alt="" />
+			</div>
+		</section>
+
+		<section class="prevent" id="prevent">
+			<div class="row">
+				<div class="image">
+					<img src="img/dont-img.png" alt="" />
+				</div>
+
+				<div class="content">
+					<h1 class="heading">things <span>not to do </span>during covid</h1>
+					<ul>
+						<li>Do not share food</li>
+						<li>Do not touch your face and nose</li>
+						<li>Do not contact sick people</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="content">
+					<h1 class="heading">things <span>to do </span>during covid</h1>
+					<ul>
+						<li>Wash your hand for 20sec</li>
+						<li>Wear a Mask</li>
+						<li>Seek Medical care regularly</li>
+					</ul>
+				</div>
+				<div class="image">
+					<img src="img/do-img.png" alt="" />
+				</div>
+			</div>
+		</section>
+
+		<section class="tracker" id="tracker">
+			<h1>Tracker</h1>
+			<div class="stats">
+				<div class="latest-report">
+					<div class="country">
+						<div class="name">Loading...</div>
+						<div class="change-country">change</div>
+						<div class="search-country dis">
+							<div class="search-box">
+								<input
+									type="text"
+									id="search-input"
+									placeholder="Search Country..."
+								/>
+								<img class="close" src="img/bg2.svg" alt="" />
+							</div>
+							<div class="country-list"></div>
+						</div>
+					</div>
+					<div class="total-cases">
+						<div class="title">Total Cases</div>
+						<div class="value">0</div>
+						<div class="new-value">+0</div>
+					</div>
+					<div class="recovered">
+						<div class="title">Recovered</div>
+						<div class="value">0</div>
+						<div class="new-value">+0</div>
+					</div>
+					<div class="deaths">
+						<div class="title">Deaths</div>
+						<div class="value">0</div>
+						<div class="new-value">+0</div>
+					</div>
+				</div>
+				<div class="chart">
+					<canvas id="axes_line_chart"></canvas>
+				</div>
+			</div>
+			<footer>
+				<div class="footer-container">
+					<div class="copyright">
+						<p>Copyright © 2020 @paramjot</p>
+					</div>
+				</div>
+			</footer>
+		</section>
+
+		<!-- Chart.js -->
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+		<!-- Geoplugin -->
+		<script
+			language="JavaScript"
+			src="http://www.geoplugin.net/javascript.gp"
+			type="text/javascript"
+		></script>
+
+		<!-- jQuery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<!-- JS -->
+		<script src="countries.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
